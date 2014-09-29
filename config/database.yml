@@ -13,20 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  username: bd9b4f54c324df
+  password: 45f570db
   socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
-  database: housemall_development
+  database: heroku_1e7d3817a3a5f40
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: housemall_test
+  database: heroku_1e7d3817a3a5f40
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: housemall_production
-  username: housemall
+  database: heroku_1e7d3817a3a5f40
+  username: bd9b4f54c324df
   password: <%= ENV['HOUSEMALL_DATABASE_PASSWORD'] %>
