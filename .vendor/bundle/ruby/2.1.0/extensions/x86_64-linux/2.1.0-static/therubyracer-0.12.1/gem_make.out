@@ -1,0 +1,40 @@
+/home/kakuiyuya01/.anyenv/envs/rbenv/versions/2.1.0/bin/ruby extconf.rb 
+checking for main() in -lpthread... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling stack.cc
+compiling context.cc
+compiling template.cc
+compiling object.cc
+compiling constraints.cc
+compiling date.cc
+compiling backref.cc
+compiling constants.cc
+compiling exception.cc
+compiling script.cc
+compiling locker.cc
+compiling external.cc
+compiling primitive.cc
+compiling value.cc
+compiling function.cc
+compiling v8.cc
+compiling signature.cc
+compiling trycatch.cc
+compiling handles.cc
+compiling gc.cc
+compiling array.cc
+compiling string.cc
+compiling init.cc
+compiling message.cc
+compiling rr.cc
+compiling invocation.cc
+compiling accessor.cc
+compiling heap.cc
+linking shared-object v8/init.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 init.so ./.gem.20140929-23813-1b4s6fs/v8
+installing default init libraries
