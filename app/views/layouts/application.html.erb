@@ -25,7 +25,19 @@
     <form class="navbar-form navbar-left">
       <input type="text" class="form-control col-lg-8" placeholder="Search">
     </form>
+    <a class="navbar-brand" href="/">
+      <% if vendor_signed_in? %>
+      こんにちは、<%= current_vendor.email %> さん
+      <% else %>
+      こんにちは、未ログイン さん
+      <% end %>
+    </a>
     <ul class="nav navbar-nav navbar-right">
+      <% if vendor_signed_in? %>
+      <li><%= link_to "ログアウト", destroy_vendor_session_path, :method => :delete %></li>
+      <% else %>
+      <li><%= link_to "ログイン", vendor_session_path %></li>
+      <% end %>
     </ul>
   </div>
 </div>
