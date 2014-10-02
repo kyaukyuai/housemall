@@ -23,8 +23,6 @@
     <a class="navbar-brand" href="/">
       <% if vendor_signed_in? %>
       こんにちは、売主 <%= current_vendor.email %> さん
-      <% elsif buyer_signed_in? %>
-      こんにちは、買主 <%= current_buyer %> さん
       <% else %>
       こんにちは、未ログイン さん
       <% end %>
@@ -32,8 +30,6 @@
     <ul class="nav navbar-nav navbar-right">
       <% if vendor_signed_in? %>
       <li><%= link_to "ログアウト", destroy_vendor_session_path, :method => :delete %></li>
-      <% elsif buyer_signed_in? %>
-      <li><%= link_to "ログアウト", destroy_buyer_session_path, :method => :delete %></li>
       <% end %>
     </ul>
   </div>
