@@ -1,11 +1,15 @@
 class PropertiesController < ApplicationController
-  before_action :authenticate_vendor!
+  # before_action :authenticate_vendor!
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.where(vendor_id: current_vendor.id)
+    if vendor_signed_in?
+      @properties = Property.where(vendor_id: current_vendor.id)
+    else
+      @properties = Property.all
+    end
   end
 
   # GET /properties/1
