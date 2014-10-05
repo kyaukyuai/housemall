@@ -22,7 +22,7 @@
 
       <p class="list-group-item">
         <strong>画像:</strong>
-        <%= @property.image %>
+        <%= image_tag @property.image.url(:detail).to_s %>
       </p>
 
       <p class="list-group-item">

@@ -43,3 +43,7 @@ gem 'devise'
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
 end
+
+gem 'carrierwave'
+gem 'rmagick'
+gem 'jquery-fileupload-rails'

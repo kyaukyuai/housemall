@@ -26,12 +26,16 @@
             <td><%= property.title %></td>
             <td><%= property.price %></td>
             <td><%= property.address %></td>
+            <% if property.image? %>
+            <td><%= image_tag property.image.url(:thumb).to_s %></td>
+            <% else %>
             <td><%= property.image %></td>
+            <% end %>
             <td><%= property.layout %></td>
             <% if vendor_signed_in? %>
-            <td><%= link_to '詳細', property %></td>
-            <td><%= link_to '編集', edit_property_path(property) %></td>
-            <td><%= link_to '削除', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to '詳細', property, :class => "btn btn-success", :style => "color:white" %></td>
+              <td><%= link_to '編集', edit_property_path(property), :class => "btn btn-success", :style => "color:white" %></td>
+            <td><%= link_to '削除', property, :class => "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:white" %></td>
           </tr>
           <% end %>
         <% end %>
@@ -41,9 +45,9 @@
     <br>
 
     <% if vendor_signed_in? %>
-    <%= link_to '新しい物件を登録する', new_property_path, :class => "btn btn-warning" %>
+    <%= link_to '新しい物件を登録する', new_property_path, :class => "btn btn-warning", :style => "color:white" %>
     <% else %>
-    <%= link_to '戻る', root_path, :class => "btn btn-warning" %>
+    <%= link_to '戻る', root_path, :class => "btn btn-warning", :style => "color:white" %>
     <% end %>
   </div>
   <div class="col-lg-1"></div>

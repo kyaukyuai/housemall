@@ -7,6 +7,7 @@ class PropertiesController < ApplicationController
   def index
     if vendor_signed_in?
       @properties = Property.where(vendor_id: current_vendor.id)
+      p @properties
     else
       @properties = Property.all
     end
@@ -30,6 +31,7 @@ class PropertiesController < ApplicationController
   # POST /properties.json
   def create
     @property = Property.new(property_params)
+    p @property
 
     respond_to do |format|
       if @property.save
